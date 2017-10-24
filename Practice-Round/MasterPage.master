@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style4 {
+            height: 554px;
+            width: 697px;
+        }
+        .auto-style5 {
+            text-align: center;
+            background-color: #0066FF;
+        }
+        .auto-style6 {
+            text-align: right;
+            border-style: solid;
+            border-width: 1px;
+            padding: 1px 4px;
+            background-color: #0066FF;
+        }
+        .auto-style7 {
+            width: 135px;
+            border-style: solid;
+            border-width: 1px;
+            padding: 1px 4px;
+            background-color: #0066FF;
+        }
+        .auto-style8 {
+            height: 30px;
+            border-style: solid;
+            border-width: 1px;
+            padding: 1px 4px;
+            background-color: #0066FF;
+        }
+        .newStyle1 {
+            background-color: #808080;
+        }
+    </style>
+</head>
+<body style="height: 661px">
+    <form id="form1" runat="server">
+    <div>
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style8" colspan="2">
+                    <h2 class="auto-style5">CIS 484 Lab 3</h2>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style7">
+                    <h2>
+                        <asp:Label ID="LabelMenu" runat="server" Text="Menu"></asp:Label>
+                    </h2>
+                    <asp:Menu ID="Menu1" runat="server" ForeColor="White" StaticSubMenuIndent="16px">
+                        <DynamicItemTemplate>
+                            <%# Eval("Text") %>
+                        </DynamicItemTemplate>
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/AddressForm.aspx" Text="Address" Value="Address"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/InsuredForm.aspx" Text="Insured" Value="Insured"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/PolicyForm.aspx" Text="Policy" Value="Policy"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </td>
+                <td class="auto-style4">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="auto-style6">Created by Tracy Otieno</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
